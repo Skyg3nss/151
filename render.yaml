@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: chaos-chaser-recognizer-light
-    runtime: docker
-    plan: free
-    healthCheckPath: /health
-    autoDeploy: true
