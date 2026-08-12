@@ -72,3 +72,13 @@ the cleanest way to keep the useful Pokemon-specific recognition while targeting
 
 ## V2.1 patch
 Pinned `ocr-ops` to `0.0.0.4.3.1` for current Python 3.11 Docker compatibility.
+
+## V2.2 build fix
+
+The real compatibility problem was the Python patch version, not just `ocr-ops`.
+
+Both `ocr-ops 0.0.0.4.3.2` and `algo-ops 0.0.1.7.1` require Python <= 3.11.7.
+The generic `python:3.11-slim` Docker tag now resolves to a newer 3.11.x release,
+so V2.2 pins the container itself to `python:3.11.7-slim`.
+
+This lets the intended package versions install without pulling EasyOCR/PyTorch.

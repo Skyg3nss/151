@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11.7-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -22,7 +22,7 @@ WORKDIR /app
 # bundled reference + WordClassifier.
 RUN python -m pip install --upgrade pip && \
     pip install --no-deps pokemon-card-recognizer==0.0.1.3.8.7 && \
-    pip install --no-deps ocr-ops==0.0.0.4.3.1 && \
+    pip install --no-deps ocr-ops==0.0.0.4.3.2 && \
     pip install algo-ops==0.0.1.7.1 && \
     pip install \
       numpy==1.26.4 \
